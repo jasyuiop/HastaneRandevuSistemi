@@ -1,0 +1,85 @@
+CREATE TABLE Hekim (
+  Id INTEGER PRIMARY KEY NOT NULL,
+  Isim TEXT NOT NULL,
+  Soyisim TEXT NOT NULL,
+  TckNo INTEGER NOT NULL,
+  sifre INTEGER NOT NULL
+); 
+
+CREATE TABLE Hasta (
+  Id INTEGER PRIMARY KEY NOT NULL,
+  isim TEXT NOT NULL,
+  soyisim TEXT NOT NULL,
+  adres TEXT NOT NULL,
+  telefon TEXT NOT NULL,
+  sifre INTEGER NOT NULL
+);
+
+CREATE TABLE Hastane (
+  id INTEGER PRIMARY KEY NOT NULL,
+  isim TEXT NOT NULL,
+  basHekim INTEGER NOT NULL
+    CONSTRAINT fk_Hekim_Hekim REFERENCES Hekimler(HekimID)
+);
+
+CREATE TABLE Klinik (
+  id INTEGER PRIMARY KEY NOT NULL,
+  klinikAdi TEXT NOT NULL,
+  hastane INTEGER NOT NULL
+    CONSTRAINT fk_Hastaneler_HastaneID REFERENCES Hastaneler(HastaneID)
+); 
+
+CREATE TABLE Polikinlik (
+  PolikinlikID INTEGER PRIMARY KEY NOT NULL,
+  Polikinlik_Adi TEXT NOT NULL,
+  Klinik INTEGER NOT NULL
+    CONSTRAINT fk_Klinikler_KlinikID REFERENCES Klinikler(KlinikID)
+);
+
+CREATE TABLE Randevu (
+  RandevuID INTEGER PRIMARY KEY NOT NULL,
+  Hasta INTEGER NOT NULL
+    CONSTRAINT fk_Hastalar_TckNo REFERENCES Hastalar(TckNo),
+  Hekim INTEGER NOT NULL
+    CONSTRAINT fk_Hekim_HekimID REFERENCES Hekim(HekimID),
+  Klinik INTEGER NOT NULL
+    CONSTRAINT fk_Klinikler_KlinikID REFERENCES Klinik(KlinikID),
+  Polikinlik INTEGER NOT NULL
+    CONSTRAINT fk_Polikinlikler_PolikinlikID REFERENCES Polikinlikler(PolikinlikID),
+  Baslangic DATETIME NOT NULL,
+  Bitis DATETIME NOT NULL,
+);
+
+CREATE TABLE İlac (
+  İlac_Kod INTEGER PRIMARY KEY NOT NULL,
+  Adi TEXT NOT NULL,
+  Marka TEXT NOT NULL,
+  Aciklama TEXT NOT NULL
+);
+
+CREATE TABLE Recete (
+  Hekim INTEGER NOT NULL
+    CONSTRAINT fk_Hekimler_HekimID REFERENCES Hekimler(HekimID),
+  Hasta INTEGER NOT NULL
+    CONSTRAINT fk_Hastalar_TckNo REFERENCES Hastalar(TckNo),
+  İlaclar INTEGER NOT NULL
+    CONSTRAINT fk_İlaclar_Kod REFERENCES İlaclar(Kod),
+  Tarih DATETIME NOT NULL,
+  Randevu INTEGER
+    CONSTRAINT fk_Randevular_RandevuID REFERENCES Randevular(RandevuID),
+  Doz TEXT NOT NULL,
+  PRIMARY KEY(Hekim, Hasta, İlaclar, Tarih)
+);
+
+// Hekim oluştururken hastaneye atama
+CREATE TABLE HekimAtama (
+  Hekim INTEGER NOT NULL
+    CONSTRAINT fk_Hekimler_HekimID REFERENCES Hekimler(HekimID),
+  Hastane INTEGER NOT NULL
+    CONSTRAINT fk_Hastaneler_HastaneID REFERENCES Hastaneler(HastaneID),
+  Klinik INTEGER NOT NULL
+    CONSTRAINT fk_Klinikler_KlinikID REFERENCES Klinik(KlinikID),
+  Polikinlik INTEGER NOT NULL
+    CONSTRAINT fk_Polikinlikler_PolikinlikID REFERENCES Polikinlikler(PolikinlikID),
+  PRIMARY KEY(Hekim, Hastane, Klinik, Polikinlik)
+);
