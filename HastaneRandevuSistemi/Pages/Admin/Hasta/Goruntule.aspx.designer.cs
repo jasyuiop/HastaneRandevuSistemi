@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HastaneRandevuSistemi
+namespace HastaneRandevuSistemi.Pages.Admin.Hasta
 {
 
 
-    public partial class Admin
+    public partial class Goruntule
     {
 
         /// <summary>
@@ -24,21 +24,21 @@ namespace HastaneRandevuSistemi
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// GridView1 control.
+        /// hastaGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView hastaGridView;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// hastaSqlDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource hastaSqlDataSource;
     }
 }

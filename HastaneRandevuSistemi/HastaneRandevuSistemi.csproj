@@ -278,14 +278,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Admin.aspx" />
-    <Content Include="Anasayfa.aspx" />
+    <Content Include="Pages\Admin\Admin.aspx" />
+    <Content Include="Pages\Admin\Hastane\Ekle.aspx" />
+    <Content Include="Pages\Admin\Hastane\Goruntule.aspx" />
+    <Content Include="Pages\Admin\Hasta\Goruntule.aspx" />
+    <Content Include="Pages\Admin\Hekim\Ekle.aspx" />
+    <Content Include="Pages\Admin\Hekim\Goruntule.aspx" />
+    <Content Include="Pages\Admin\Klinik\Ekle.aspx" />
+    <Content Include="Pages\Admin\Klinik\Goruntule.aspx" />
+    <Content Include="Pages\Admin\Polikinlik\Ekle.aspx" />
+    <Content Include="Pages\Admin\Polikinlik\Goruntule.aspx" />
+    <Content Include="Pages\Admin\Randevu\Goruntule.aspx" />
+    <Content Include="Pages\Admin\Recete\Goruntule.aspx" />
+    <Content Include="Pages\Admin\Sehir\Ekle.aspx" />
+    <Content Include="Pages\Admin\Sehir\Goruntule.aspx" />
+    <Content Include="Pages\Anasayfa.aspx" />
     <Content Include="App_Data\RandevuDB.mdf" />
     <Content Include="App_Data\RandevuDB_log.ldf">
       <DependentUpon>RandevuDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -303,7 +314,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="KayitOl.aspx" />
+    <Content Include="Pages\KayitOl.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -339,44 +350,121 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.aspx.cs">
+    <Compile Include="Pages\Admin\Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
+    <Compile Include="Pages\Admin\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Anasayfa.aspx.cs">
+    <Compile Include="Pages\Admin\Hastane\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Hastane\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Hastane\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Hastane\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Hasta\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Hasta\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Hekim\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Hekim\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Hekim\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Hekim\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Klinik\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Klinik\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Klinik\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Klinik\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Polikinlik\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Polikinlik\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Polikinlik\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Polikinlik\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Randevu\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Randevu\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Recete\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Recete\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Sehir\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Sehir\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Sehir\Goruntule.aspx.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Sehir\Goruntule.aspx.designer.cs">
+      <DependentUpon>Goruntule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Anasayfa.aspx.cs">
       <DependentUpon>Anasayfa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Anasayfa.aspx.designer.cs">
+    <Compile Include="Pages\Anasayfa.aspx.designer.cs">
       <DependentUpon>Anasayfa.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="KayitOl.aspx.cs">
+    <Compile Include="Pages\KayitOl.aspx.cs">
       <DependentUpon>KayitOl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="KayitOl.aspx.designer.cs">
+    <Compile Include="Pages\KayitOl.aspx.designer.cs">
       <DependentUpon>KayitOl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\20200429201008_RandevuDB.cs" />

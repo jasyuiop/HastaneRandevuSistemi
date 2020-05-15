@@ -60,6 +60,6 @@ namespace HastaneRandevuSistemi.Models
                 .HasForeignKey(k => k.HekimId);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Emrenqw\WorkSpace\HastaneRandevuSistemi\HastaneRandevuSistemi\App_Data\RandevuDB.mdf;Integrated Security=True");
+            => options.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\RandevuDB.mdf;Integrated Security=True");
     }
 }

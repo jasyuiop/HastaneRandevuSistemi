@@ -55,7 +55,7 @@ namespace HastaneRandevuSistemi
 
         protected void BttnAdminPage_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Admin.aspx");
+            Response.Redirect("~/Pages/Admin/Admin.aspx");
         }
     }
 }
